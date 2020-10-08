@@ -1,0 +1,7 @@
+Terdapat implementasi konsep class dan object                       v 
+Terdapat implementasi property dan method pada suatu class          v
+Terdapat implementasi access modifier (public, private, protected)  v
+Terdapat implementasi inheritance                                   v
+Terdapat implementasi polymorphism
+Terdapat implementasi overloading
+Terdapat implementasi package dan interface
