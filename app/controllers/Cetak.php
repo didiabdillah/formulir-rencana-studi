@@ -30,14 +30,20 @@ class Cetak extends Controller
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
             <title>Cetak FRS</title>
         </head>
-        <body>';
+        <body>
+        
+        <table border="1" id="tabelFrs" width="100%" cellspacing="0">
+
+        <tbody> <tr>';
 
         //Halaman
         foreach ($data as $key) {
-            $html .= '<p>' . $key["Matkul"] . '</p>';
+            $html .= '<td>' . $key["Matkul"] . '</td>';
         }
 
-        $html .= '</body>
+        $html .= '</tr></tbody>
+        </table>
+                </body>
                 </html>';
 
         $dokumen = "Formulir Rencana Studi.pdf";
