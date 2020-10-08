@@ -16,6 +16,13 @@ class Cetak extends Controller
     public function print()
     {
         $data = $this->model('Cetak_model')->getByNim($_POST);
+        $nim = $data[0]["Nim"];
+        $nama = $data[0]["Nama"];
+        $iterasi = 0;
+
+        foreach ($data as $key) {
+            $iterasi = $iterasi + 1;
+        }
 
         require_once 'vendor/autoload.php';
 
@@ -38,26 +45,32 @@ class Cetak extends Controller
 
         <tbody> 
         <tr>
-        <td width="20%">NIM</td>
+        <td style="height: 25px" width="20%">NIM</td>
         <td width="5%" style="text-align: center">:</td>
-        <td></td>
+        <td>' . $nim . '</td>
         </tr>
     
         <tr>
-        <td width="20%">Nama</td>
+        <td style="height: 25px" width="20%">Nama</td>
         <td width="5%" style="text-align: center">:</td>
-        <td></td>
-        </tr>
-    
-        <tr>
-        <td rowspan="" width="20%">Mata Kuliah</td>
-        <td rowspan="" width="5%" style="text-align: center">:</td>
+        <td>' . $nama . '</td>
+        </tr>';
+
 
         //Halaman
-        // foreach ($data as $key) {
-            <td></td>
-        // }
-        </tr>';
+        $line = false;
+        foreach ($data as $key) {
+            $html .= '<tr>';
+
+            if ($line == false) {
+                $html .= '<td rowspan="' . $iterasi . '" width="20%">Mata Kuliah</td>';
+                $html .= '<td rowspan="' . $iterasi . '" width="5%" style="text-align: center">:</td>';
+            }
+
+            $html .= '<td style="height: 25px">' . $key["Matkul"] . '</td>
+              </tr>';
+            $line = true;
+        }
 
 
         $html .= '</tbody>
