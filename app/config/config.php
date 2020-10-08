@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/frs-phpmvc/public/');
+define('BASEURL', 'http://localhost/frs-phpmvc/');
 
 //DB
 define('DB_HOST', 'localhost');
