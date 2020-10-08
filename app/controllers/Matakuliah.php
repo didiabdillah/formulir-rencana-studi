@@ -5,7 +5,7 @@ class Matakuliah extends Controller
 
     public function index()
     {
-        $data['judul'] = "Matakuliah";
+        $data['judul'] = "Mata Kuliah";
         $data['matakuliah'] = $this->model('Matakuliah_model')->getAllMatakuliah();
 
         $this->view('Templates/header', $data);
@@ -15,7 +15,7 @@ class Matakuliah extends Controller
 
     public function insert()
     {
-        $data['judul'] = "Tambah Matakuliah";
+        $data['judul'] = "Tambah Mata Kuliah";
 
         $this->view('Templates/header', $data);
         $this->view('Matakuliah/tambah');
@@ -37,7 +37,7 @@ class Matakuliah extends Controller
 
     public function edit($id)
     {
-        $data['judul'] = "Edit Matakuliah";
+        $data['judul'] = "Edit Mata Kuliah";
         $data['matakuliah'] = $this->model('Matakuliah_model')->getMatakuliahById($id);
 
         $this->view('Templates/header', $data);
