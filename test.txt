@@ -5,3 +5,6 @@ Terdapat implementasi inheritance                                   v
 Terdapat implementasi polymorphism
 Terdapat implementasi overloading
 Terdapat implementasi package dan interface
+Memberi Komentar
+
+True & False Decision Flowchart (Finish Flowchart)
