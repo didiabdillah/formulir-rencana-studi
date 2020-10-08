@@ -5,8 +5,8 @@ class Frs extends Controller
 
     public function index()
     {
-        $data['judul'] = "Transaksi Detail";
-        $data['transaksi'] = $this->model('Frs_model')->getAllTransaksi();
+        $data['judul'] = "Frs";
+        $data['frs'] = $this->model('Frs_model')->getAllFrs();
 
         $this->view('Templates/header', $data);
         $this->view('Frs/index', $data);
@@ -15,7 +15,7 @@ class Frs extends Controller
 
     public function insert()
     {
-        $data['judul'] = "Tambah Transaksi Detail";
+        $data['judul'] = "Tambah Frs";
 
         $this->view('Templates/header', $data);
         $this->view('Frs/tambah');
@@ -24,7 +24,7 @@ class Frs extends Controller
 
     public function store()
     {
-        if ($this->model('Frs_model')->tambahDataTransaksi($_POST) > 0) {
+        if ($this->model('Frs_model')->tambahDataFrs($_POST) > 0) {
             Flasher::setFlash('Berhasil', 'ditambahkan', 'success');
             header('location: ' . BASEURL . 'frs');
             exit;
@@ -37,8 +37,8 @@ class Frs extends Controller
 
     public function edit($id)
     {
-        $data['judul'] = "Edit Transaksi Detail";
-        $data['transaksi'] = $this->model('Frs_model')->getTransaksiById($id);
+        $data['judul'] = "Edit Frs";
+        $data['frs'] = $this->model('Frs_model')->getFrsById($id);
 
         $this->view('Templates/header', $data);
         $this->view('Frs/edit', $data);
@@ -47,7 +47,7 @@ class Frs extends Controller
 
     public function update()
     {
-        if ($this->model('Frs_model')->ubahDataTransaksi($_POST) > 0) {
+        if ($this->model('Frs_model')->ubahDataFrs($_POST) > 0) {
             Flasher::setFlash('Berhasil', 'diubah', 'success');
             header('location: ' . BASEURL . 'frs');
             exit;
@@ -60,7 +60,7 @@ class Frs extends Controller
 
     public function destroy($id)
     {
-        if ($this->model('Frs_model')->hapusDataTransaksi($id) > 0) {
+        if ($this->model('Frs_model')->hapusDataFrs($id) > 0) {
             Flasher::setFlash('Berhasil', 'dihapus', 'success');
             header('location: ' . BASEURL . 'frs');
             exit;
