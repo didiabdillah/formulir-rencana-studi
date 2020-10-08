@@ -31,17 +31,36 @@ class Cetak extends Controller
             <title>Cetak FRS</title>
         </head>
         <body>
-        
+        <h3 style="text-align:center; line-height: 0.5">Formulir Rencana Studi</h3>
+        <br>
+        <br>
         <table border="1" id="tabelFrs" width="100%" cellspacing="0">
 
-        <tbody> <tr>';
+        <tbody> 
+        <tr>
+        <td width="20%">NIM</td>
+        <td width="5%" style="text-align: center">:</td>
+        <td></td>
+        </tr>
+    
+        <tr>
+        <td width="20%">Nama</td>
+        <td width="5%" style="text-align: center">:</td>
+        <td></td>
+        </tr>
+    
+        <tr>
+        <td rowspan="" width="20%">Mata Kuliah</td>
+        <td rowspan="" width="5%" style="text-align: center">:</td>
 
         //Halaman
-        foreach ($data as $key) {
-            $html .= '<td>' . $key["Matkul"] . '</td>';
-        }
+        // foreach ($data as $key) {
+            <td></td>
+        // }
+        </tr>';
 
-        $html .= '</tr></tbody>
+
+        $html .= '</tbody>
         </table>
                 </body>
                 </html>';
