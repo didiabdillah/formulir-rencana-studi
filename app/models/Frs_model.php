@@ -1,6 +1,6 @@
 <?php
 
-class Transaksi_detail_model
+class Frs_model
 {
     protected $table = "transaksi_detil";
 
