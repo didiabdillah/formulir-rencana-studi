@@ -16,9 +16,11 @@ class Frs extends Controller
     public function insert()
     {
         $data['judul'] = "Tambah Frs";
+        $data['nim'] = $this->model('Frs_model')->getNim();
+        $data['kode_matkul'] = $this->model('Frs_model')->getKodeMatkul();
 
         $this->view('Templates/header', $data);
-        $this->view('Frs/tambah');
+        $this->view('Frs/tambah', $data);
         $this->view('Templates/footer');
     }
 

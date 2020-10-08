@@ -3,12 +3,28 @@
 class Frs_model
 {
     protected $table = "frs";
+    protected $table2 = "mahasiswa";
+    protected $table3 = "matakuliah";
 
     private $db;
 
     public function __construct()
     {
         $this->db = new Database;
+    }
+
+    public function getNim()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table2);
+
+        return $this->db->resultSet();
+    }
+
+    public function getKodeMatkul()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table3);
+
+        return $this->db->resultSet();
     }
 
     public function getAllFrs()
@@ -21,13 +37,13 @@ class Frs_model
     public function tambahDataFrs($data)
     {
         $query = "INSERT INTO " . $this->table . " VALUES
-                  ('', :no, :kode, :qty, :sub)";
+                  ('', :no, :nim, :kode, :tahun)";
 
         $this->db->query($query);
-        $this->db->bind('no', $data['no']);
+        $this->db->bind('no', $data['no_frs']);
+        $this->db->bind('nim', $data['nim']);
         $this->db->bind('kode', $data['kode']);
-        $this->db->bind('qty', $data['qty']);
-        $this->db->bind('sub', $data['sub']);
+        $this->db->bind('tahun', $data['tahun']);
 
         $this->db->execute();
 

@@ -26,8 +26,8 @@
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $row["no_frs"]; ?></td>
-                    <td><?= $row["nim"]; ?></td>
-                    <td><?= $row["kode_matkul"]; ?></td>
+                    <td><a href="<?= BASEURL ?>mahasiswa"><?= $row["nim"]; ?></a></td>
+                    <td><a href="<?= BASEURL ?>matakuliah"><?= $row["kode_matkul"]; ?></a></td>
                     <td><?= $row["tahun_akademik"]; ?></td>
 
                     <td>

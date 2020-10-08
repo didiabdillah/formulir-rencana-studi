@@ -1,37 +1,40 @@
 <div class="container">
-    <h4>Tambah Transaksi Detail</h4>
+    <h4>Tambah FRS</h4>
 
-    <form action="<?= BASEURL ?>transaksi_detail/store" method="post">
+    <form action="<?= BASEURL ?>frs/store" method="post">
+
+        <div class="form-group">
+            <label for="no_frs">No FRS</label>
+            <input class="input-block" type="text" id="no_frs" name="no_frs" placeholder="No FRS">
+        </div>
+
+        <div class="form-group">
+            <label for="nim">NIM</label>
+            <select id="nim" name="nim" class="input-block">
+                <?php foreach ($data["nim"] as $nim) { ?>
+                    <option value="<?= $nim["nim"]; ?>"><?= $nim["nim"] . " - " . $nim["nama"]; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="kode">Kode Matkul</label>
+            <select id="kode" name="kode" class="input-block">
+                <?php foreach ($data["kode_matkul"] as $matkul) { ?>
+                    <option value="<?= $matkul["kode_matakuliah"]; ?>"><?= $matkul["kode_matakuliah"] . " - " . $matkul["nama_matakuliah"]; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tahun">Tahun Akademik</label>
+            <input class="input-block" type="text" id="tahun" name="tahun" placeholder="Tahun Akademik">
+        </div>
 
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">
-                    <label for="no">No Transaksi</label>
-                    <input class="input-block" type="text" id="no" name="no" placeholder="No Transaksi">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="kode">Kode Barang</label>
-                    <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Barang">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="qty">Qty</label>
-                    <input class="input-block" type="text" id="qty" name="qty" placeholder="Qty">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="sub">Sub Total</label>
-                    <input class="input-block" type="text" id="sub" name="sub" placeholder="Sub Total">
-                </div>
-            </div>
-
-            <div class="col sm-6">
-                <div class="form-group">
-                    <a href="<?= BASEURL ?>transaksi_detail" class="text-center paper-btn btn-block btn-danger">Batal</a>
+                    <a href="<?= BASEURL ?>" class="text-center paper-btn btn-block btn-danger">Batal</a>
                 </div>
             </div>
             <div class="col sm-6">
@@ -40,6 +43,7 @@
                 </div>
             </div>
         </div>
+
 
     </form>
 
