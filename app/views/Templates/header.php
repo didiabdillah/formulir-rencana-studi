@@ -25,7 +25,6 @@
                 <ul class="inline">
                     <li><a href="<?= BASEURL ?>mahasiswa">Mahasiswa</a></li>
                     <li><a href="<?= BASEURL ?>matakuliah">Mata Kuliah</a></li>
-                    <li><a href="<?= BASEURL ?>frs">FRS</a></li>
                 </ul>
             </div>
         </div>

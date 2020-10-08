@@ -5,6 +5,8 @@
 
     <a href="<?= BASEURL ?>frs/insert/" class="paper-btn btn-secondary btn-small"> Tambah FRS </a>
 
+    <a href="<?= BASEURL ?>cetak/index/" class="paper-btn btn-success btn-small"> Cetak FRS </a>
+
     <table class="table-hover">
         <thead>
             <tr>
