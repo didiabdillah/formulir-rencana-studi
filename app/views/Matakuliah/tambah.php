@@ -1,25 +1,22 @@
 <div class="container">
-    <h4>Tambah Transaksi</h4>
+    <h4>Tambah Mata Kuliah</h4>
 
-    <form action="<?= BASEURL ?>transaksi/store" method="post">
+    <form action="<?= BASEURL ?>matakuliah/store" method="post">
+
+        <div class="form-group">
+            <label for="kode">Kode Mata Kuliah</label>
+            <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Mata Kuliah">
+        </div>
+
+        <div class="form-group">
+            <label for="nama"> Nama Mata Kuliah</label>
+            <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama Mata Kuliah">
+        </div>
 
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">
-                    <label for="no">No Transaksi</label>
-                    <input class="input-block" type="text" id="no" name="no" placeholder="No Transaksi">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="total"> Total Transaksi</label>
-                    <input class="input-block" type="text" id="total" name="total" placeholder="Total Transaksi">
-                </div>
-            </div>
-
-            <div class="col sm-6">
-                <div class="form-group">
-                    <a href="<?= BASEURL ?>transaksi" class="text-center paper-btn btn-block btn-danger">Batal</a>
+                    <a href="<?= BASEURL ?>matakuliah" class="text-center paper-btn btn-block btn-danger">Batal</a>
                 </div>
             </div>
             <div class="col sm-6">
@@ -30,5 +27,4 @@
         </div>
 
     </form>
-
 </div>

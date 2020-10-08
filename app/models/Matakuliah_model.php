@@ -20,14 +20,13 @@ class Matakuliah_model
 
     public function tambahDataMatakuliah($data)
     {
-        $query = "INSERT INTO transaksi
+        $query = "INSERT INTO matakuliah
                     VALUES
-                  (:no, :waktu, :total)";
+                  ('', :kode, :nama)";
 
         $this->db->query($query);
-        $this->db->bind('waktu', date('Y-m-d H:i:s'));
-        $this->db->bind('no', $data['no']);
-        $this->db->bind('total', $data['total']);
+        $this->db->bind('kode', $data['kode']);
+        $this->db->bind('nama', $data['nama']);
 
         $this->db->execute();
 
