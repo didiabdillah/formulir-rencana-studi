@@ -20,12 +20,12 @@
             foreach ($data["matakuliah"] as $row) { ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row["kode_matakuliah"]; ?></td>
-                    <td><?= $row["nama_matakuliah"]; ?></td>
+                    <td><?= $row->kode_matakuliah; ?></td>
+                    <td><?= $row->nama_matakuliah; ?></td>
 
                     <td>
-                        <a href="<?= BASEURL . "matakuliah/edit/" . $row["id"]; ?>" class="paper-btn btn-small btn-warning">Edit</a>
-                        <a href="<?= BASEURL . "matakuliah/destroy/" . $row["id"]; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
+                        <a href="<?= BASEURL . "matakuliah/edit/" . $row->id; ?>" class="paper-btn btn-small btn-warning">Edit</a>
+                        <a href="<?= BASEURL . "matakuliah/destroy/" . $row->id; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>

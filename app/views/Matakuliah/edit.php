@@ -2,16 +2,16 @@
     <h4>Edit Mata Kuliah</h4>
 
     <form action="<?= BASEURL ?>matakuliah/update" method="post">
-        <input type="hidden" name="id" id="id" value="<?= $data["matakuliah"]["id"]; ?>">
+        <input type="hidden" name="id" id="id" value="<?= $data["matakuliah"]->id; ?>">
 
         <div class="form-group">
             <label for="kode">Kode Mata Kuliah</label>
-            <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Mata Kuliah" value="<?= $data["matakuliah"]["kode_matakuliah"]; ?>">
+            <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Mata Kuliah" value="<?= $data["matakuliah"]->kode_matakuliah; ?>">
         </div>
 
         <div class="form-group">
             <label for="nama"> Nama Mata Kuliah</label>
-            <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama Mata Kuliah" value="<?= $data["matakuliah"]["nama_matakuliah"]; ?>">
+            <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama Mata Kuliah" value="<?= $data["matakuliah"]->nama_matakuliah; ?>">
         </div>
 
         <div class="row">
