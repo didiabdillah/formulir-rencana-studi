@@ -1,8 +1,8 @@
 <?php
 
-class Barang_model
+class Mahasiswa_model
 {
-    protected $table = "barang";
+    protected $table = "mahasiswa";
 
     private $db;
 
@@ -11,14 +11,14 @@ class Barang_model
         $this->db = new Database;
     }
 
-    public function getAllBarang()
+    public function getAllMahasiswa()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
 
         return $this->db->resultSet();
     }
 
-    public function tambahDataBarang($data)
+    public function tambahDataMahasiswa($data)
     {
         $query = "INSERT INTO barang
                     VALUES
@@ -35,14 +35,14 @@ class Barang_model
         return $this->db->rowCount();
     }
 
-    public function getBarangById($id)
+    public function getMahasiswaById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
-    public function ubahDataBarang($data)
+    public function ubahDataMahasiswa($data)
     {
         $query = "UPDATE barang SET
                     kode_barang = :kode_barang,
@@ -63,7 +63,7 @@ class Barang_model
         return $this->db->rowCount();
     }
 
-    public function hapusDataBarang($id)
+    public function hapusDataMahasiswa($id)
     {
         $query = "DELETE FROM barang WHERE id= :id";
         $this->db->query($query);
