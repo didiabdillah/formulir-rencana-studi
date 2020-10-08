@@ -22,7 +22,8 @@
             <?php
             $no = 1;
 
-            foreach ($data["frs"] as $row) {           ?>
+            foreach ($data["frs"] as $row) {
+            ?>
                 <tr>
                     <td><?= $no++; ?></td>
                     <td><?= $row["no_frs"]; ?></td>
