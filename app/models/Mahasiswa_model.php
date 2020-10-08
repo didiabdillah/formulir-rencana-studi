@@ -66,9 +66,9 @@ class Mahasiswa_model
 
     public function hapusDataMahasiswa($id)
     {
-        $query = "DELETE FROM barang WHERE id= :id";
+        $query = "DELETE FROM mahasiswa WHERE nim= :nim";
         $this->db->query($query);
-        $this->db->bind('id', $id);
+        $this->db->bind('nim', $id);
 
         $this->db->execute();
 
