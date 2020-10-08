@@ -7,7 +7,7 @@
             <label for="nim">NIM</label>
             <select id="nim" name="nim" class="input-block">
                 <?php foreach ($data["nim"] as $nim) { ?>
-                    <option value="<?= $nim["nim"]; ?>"><?= $nim["nim"] . " - " . $nim["nama"]; ?></option>
+                    <option value="<?= $nim->nim; ?>"><?= $nim->nim . " - " . $nim->nama; ?></option>
                 <?php } ?>
             </select>
         </div>

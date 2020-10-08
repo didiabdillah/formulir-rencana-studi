@@ -16,8 +16,8 @@ class Cetak extends Controller
     public function print()
     {
         $data = $this->model('Cetak_model')->getByNim($_POST);
-        $nim = $data[0]["Nim"];
-        $nama = $data[0]["Nama"];
+        $nim = $data[0]->Nim;
+        $nama = $data[0]->Nama;
         $iterasi = 0;
 
         foreach ($data as $key) {
@@ -67,7 +67,7 @@ class Cetak extends Controller
                 $html .= '<td rowspan="' . $iterasi . '" width="5%" style="text-align: center">:</td>';
             }
 
-            $html .= '<td style="height: 25px">' . $key["Matkul"] . '</td>
+            $html .= '<td style="height: 25px">' . $key->Matkul . '</td>
               </tr>';
             $line = true;
         }
