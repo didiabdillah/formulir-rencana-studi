@@ -1,10 +1,10 @@
 <?php
 
-class Barang_model
+class Cetak_model
 {
-    protected $table = "barang";
-    protected $table2 = "transaksi";
-    protected $table3 = "transaksi_detil";
+    protected $table = "mahasiswa";
+    protected $table2 = "matakuliah";
+    protected $table3 = "frs";
 
     private $db;
 
@@ -13,7 +13,7 @@ class Barang_model
         $this->db = new Database;
     }
 
-    public function getAllBarang()
+    public function getAllMahasiswa()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
 
