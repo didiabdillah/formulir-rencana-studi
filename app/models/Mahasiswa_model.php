@@ -38,8 +38,8 @@ class Mahasiswa_model
 
     public function getMahasiswaById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nim=:nim');
-        $this->db->bind('nim', $id);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
         return $this->db->single();
     }
 
@@ -68,9 +68,9 @@ class Mahasiswa_model
 
     public function hapusDataMahasiswa($id)
     {
-        $query = "DELETE FROM mahasiswa WHERE nim= :nim";
+        $query = "DELETE FROM mahasiswa WHERE id= :id";
         $this->db->query($query);
-        $this->db->bind('nim', $id);
+        $this->db->bind('id', $id);
 
         $this->db->execute();
 
