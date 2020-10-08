@@ -2,7 +2,7 @@
 
 class Frs_model
 {
-    protected $table = "transaksi_detil";
+    protected $table = "frs";
 
     private $db;
 
@@ -11,14 +11,14 @@ class Frs_model
         $this->db = new Database;
     }
 
-    public function getAllTransaksi()
+    public function getAllFrs()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
 
         return $this->db->resultSet();
     }
 
-    public function tambahDataTransaksi($data)
+    public function tambahDataFrs($data)
     {
         $query = "INSERT INTO " . $this->table . " VALUES
                   ('', :no, :kode, :qty, :sub)";
@@ -34,14 +34,14 @@ class Frs_model
         return $this->db->rowCount();
     }
 
-    public function getTransaksiById($id)
+    public function getFrsById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id =:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
-    public function ubahDataTransaksi($data)
+    public function ubahDataFrs($data)
     {
         $query = "UPDATE " . $this->table . " SET
                     no_transaksi = :no,
@@ -62,7 +62,7 @@ class Frs_model
         return $this->db->rowCount();
     }
 
-    public function hapusDataTransaksi($id)
+    public function hapusDataFrs($id)
     {
         $query = "DELETE FROM " . $this->table . " WHERE id= :id";
         $this->db->query($query);
