@@ -26,4 +26,16 @@ class Cetak_model
 
         return $this->db->resultSet();
     }
+
+    public function getByNim($data)
+    {
+        $this->db->query("SELECT m.nim as Nim, m.nama as Nama, mk.nama_matakuliah Matkul 
+            FROM frs as f
+            INNER JOIN matakuliah mk ON f.kode_Matkul = mk.kode_matakuliah
+            INNER JOIN mahasiswa m ON f.nim = m.nim 
+            WHERE f.nim = " . $data["nim"] . "
+            ORDER BY mk.kode_matakuliah");
+
+        return $this->db->resultSet();
+    }
 }
