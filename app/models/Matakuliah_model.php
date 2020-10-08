@@ -1,8 +1,8 @@
 <?php
 
-class Transaksi_model
+class Matakuliah_model
 {
-    protected $table = "transaksi";
+    protected $table = "matakuliah";
 
     private $db;
 
@@ -11,14 +11,14 @@ class Transaksi_model
         $this->db = new Database;
     }
 
-    public function getAllTransaksi()
+    public function getAllMatakuliah()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
 
         return $this->db->resultSet();
     }
 
-    public function tambahDataTransaksi($data)
+    public function tambahDataMatakuliah($data)
     {
         $query = "INSERT INTO transaksi
                     VALUES
@@ -34,14 +34,14 @@ class Transaksi_model
         return $this->db->rowCount();
     }
 
-    public function getTransaksiById($id)
+    public function getMatakuliahById($id)
     {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE no_transaksi=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
 
-    public function ubahDataTransaksi($data)
+    public function ubahDataMatakuliah($data)
     {
         $query = "UPDATE " . $this->table . " SET
                     no_transaksi = :id,
@@ -59,7 +59,7 @@ class Transaksi_model
         return $this->db->rowCount();
     }
 
-    public function hapusDataTransaksi($id)
+    public function hapusDataMatakuliah($id)
     {
         $query = "DELETE FROM transaksi WHERE no_transaksi= :id";
         $this->db->query($query);
