@@ -19,4 +19,11 @@ class Cetak_model
 
         return $this->db->resultSet();
     }
+
+    public function getNim()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table2);
+
+        return $this->db->resultSet();
+    }
 }
