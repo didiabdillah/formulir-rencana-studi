@@ -41,6 +41,8 @@ class Frs extends Controller
     {
         $data['judul'] = "Edit Frs";
         $data['frs'] = $this->model('Frs_model')->getFrsById($id);
+        $data['nim'] = $this->model('Frs_model')->getNim();
+        $data['kode_matkul'] = $this->model('Frs_model')->getKodeMatkul();
 
         $this->view('Templates/header', $data);
         $this->view('Frs/edit', $data);

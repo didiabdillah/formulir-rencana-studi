@@ -60,18 +60,18 @@ class Frs_model
     public function ubahDataFrs($data)
     {
         $query = "UPDATE " . $this->table . " SET
-                    no_transaksi = :no,
-                    kode_barang = :kode,
-                    qty = :qty,
-                    sub_total = :sub
+                    no_frs = :no,
+                    nim = :nim,
+                    kode_matkul = :kode,
+                    tahun_akademik = :tahun
                     WHERE id = :id";
 
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
-        $this->db->bind('no', $data['no']);
+        $this->db->bind('no', $data['no_frs']);
+        $this->db->bind('nim', $data['nim']);
         $this->db->bind('kode', $data['kode']);
-        $this->db->bind('qty', $data['qty']);
-        $this->db->bind('sub', $data['sub']);
+        $this->db->bind('tahun', $data['tahun']);
 
         $this->db->execute();
 
