@@ -20,15 +20,16 @@ class Mahasiswa_model
 
     public function tambahDataMahasiswa($data)
     {
-        $query = "INSERT INTO barang
+        $query = "INSERT INTO mahasiswa
                     VALUES
-                  ('', :kode_barang, :nama_barang, :satuan, :harga)";
+                  (:nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
 
         $this->db->query($query);
-        $this->db->bind('kode_barang', $data['kode']);
-        $this->db->bind('nama_barang', $data['nama']);
-        $this->db->bind('satuan', $data['satuan']);
-        $this->db->bind('harga', $data['harga']);
+        $this->db->bind('nim', $data['nim']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('gender', $data['gender']);
+        $this->db->bind('tgl_lahir', $data['tgl_lahir']);
+        $this->db->bind('thn_masuk', $data['thn_masuk']);
 
         $this->db->execute();
 

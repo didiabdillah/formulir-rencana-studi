@@ -1,36 +1,41 @@
 <div class="container">
-    <h4>Tambah Barang</h4>
+    <h4>Tambah Mahasiswa</h4>
 
-    <form action="<?= BASEURL ?>barang/store" method="post">
+    <form action="<?= BASEURL ?>mahasiswa/store" method="post">
+
+
+        <div class="form-group">
+            <label for="nim">NIM</label>
+            <input class="input-block" type="text" id="nim" name="nim" placeholder="NIM">
+        </div>
+
+        <div class="form-group">
+            <label for="nama">Nama</label>
+            <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" class="input-block">
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tgl_lahir">Tanggal Lahir</label>
+            <input class="input-block" type="date" id="tgl_lahir" name="tgl_lahir" placeholder="Tanggal Lahir">
+        </div>
+
+        <div class="form-group">
+            <label for="thn_masuk">Tahun Masuk</label>
+            <input class="input-block" type="number" id="thn_masuk" name="thn_masuk" placeholder="Tahun Masuk">
+        </div>
 
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">
-                    <label for="kode">Kode Barang</label>
-                    <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Barang">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="nama">Nama Barang</label>
-                    <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama Barang">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="satuan">Satuan</label>
-                    <input class="input-block" type="text" id="satuan" name="satuan" placeholder="Satuan">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <label for="harga">Harga</label>
-                    <input class="input-block" type="number" id="harga" name="harga" placeholder="Harga">
-                </div>
-            </div>
-            <div class="col sm-6">
-                <div class="form-group">
-                    <a href="<?= BASEURL ?>barang" class="text-center paper-btn btn-block btn-danger">Batal</a>
+                    <a href="<?= BASEURL ?>mahasiswa" class="text-center paper-btn btn-block btn-danger">Batal</a>
                 </div>
             </div>
             <div class="col sm-6">
@@ -39,6 +44,7 @@
                 </div>
             </div>
         </div>
+
 
     </form>
 
