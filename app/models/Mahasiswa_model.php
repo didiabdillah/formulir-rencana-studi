@@ -22,7 +22,7 @@ class Mahasiswa_model
     {
         $query = "INSERT INTO mahasiswa
                     VALUES
-                  (:nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
+                  ('', :nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
 
         $this->db->query($query);
         $this->db->bind('nim', $data['nim']);
@@ -38,25 +38,27 @@ class Mahasiswa_model
 
     public function getMahasiswaById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id', $id);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nim=:nim');
+        $this->db->bind('nim', $id);
         return $this->db->single();
     }
 
     public function ubahDataMahasiswa($data)
     {
-        $query = "UPDATE barang SET
-                    kode_barang = :kode_barang,
-                    nama_barang = :nama_barang,
-                    satuan = :satuan,
-                    harga = :harga 
+        $query = "UPDATE mahasiswa SET
+                    nim = :nim,
+                    nama = :nama,
+                    gender = :gender,
+                    tanggal_lahir = :tgl_lahir, 
+                    tahun_masuk = :thn_masuk 
                     WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind('kode_barang', $data['kode']);
-        $this->db->bind('nama_barang', $data['nama']);
-        $this->db->bind('satuan', $data['satuan']);
-        $this->db->bind('harga', $data['harga']);
+        $this->db->bind('nim', $data['nim']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('gender', $data['gender']);
+        $this->db->bind('tgl_lahir', $data['tgl_lahir']);
+        $this->db->bind('thn_masuk', $data['thn_masuk']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
