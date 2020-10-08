@@ -60,7 +60,7 @@ class Matakuliah_model
 
     public function hapusDataMatakuliah($id)
     {
-        $query = "DELETE FROM transaksi WHERE no_transaksi= :id";
+        $query = "DELETE FROM matakuliah WHERE id= :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
