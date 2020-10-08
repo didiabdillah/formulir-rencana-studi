@@ -24,7 +24,7 @@ class Cetak extends Controller
             $iterasi = $iterasi + 1;
         }
 
-        require_once 'vendor/autoload.php';
+        require_once 'assets/vendor/autoload.php';
 
         //Initialize
         $mpdf = new \Mpdf\Mpdf();
