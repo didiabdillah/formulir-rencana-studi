@@ -2,17 +2,17 @@
     <h4>Edit FRS</h4>
 
     <form action="<?= BASEURL ?>frs/update" method="post">
-        <input type="hidden" name="id" id="id" value="<?= $data["frs"]["id"]; ?>">
+        <input type="hidden" name="id" id="id" value="<?= $data["frs"]->id; ?>">
         <div class="form-group">
             <label for="no_frs">No FRS</label>
-            <input class="input-block" type="text" id="no_frs" name="no_frs" placeholder="No FRS" value="<?= $data["frs"]["no_frs"]; ?>">
+            <input class="input-block" type="text" id="no_frs" name="no_frs" placeholder="No FRS" value="<?= $data["frs"]->no_frs; ?>">
         </div>
 
         <div class="form-group">
             <label for="nim">NIM</label>
             <select id="nim" name="nim" class="input-block">
                 <?php foreach ($data["nim"] as $nim) { ?>
-                    <option value="<?= $nim["nim"]; ?>" <?php if ($data["frs"]["nim"] == $nim["nim"]) echo "selected"; ?>><?= $nim["nim"] . " - " . $nim["nama"]; ?></option>
+                    <option value="<?= $nim->nim; ?>" <?php if ($data["frs"]->nim == $nim->nim) echo "selected"; ?>><?= $nim->nim . " - " . $nim->nama; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -21,14 +21,14 @@
             <label for="kode">Kode Matkul</label>
             <select id="kode" name="kode" class="input-block">
                 <?php foreach ($data["kode_matkul"] as $matkul) { ?>
-                    <option value="<?= $matkul["kode_matakuliah"]; ?>" <?php if ($data["frs"]["kode_matkul"] == $matkul["kode_matakuliah"]) echo "selected"; ?>><?= $matkul["kode_matakuliah"] . " - " . $matkul["nama_matakuliah"]; ?></option>
+                    <option value="<?= $matkul->kode_matakuliah; ?>" <?php if ($data["frs"]->kode_matkul == $matkul->kode_matakuliah) echo "selected"; ?>><?= $matkul->kode_matakuliah . " - " . $matkul->nama_matakuliah; ?></option>
                 <?php } ?>
             </select>
         </div>
 
         <div class="form-group">
             <label for="tahun">Tahun Akademik</label>
-            <input class="input-block" type="text" id="tahun" name="tahun" placeholder="Tahun Akademik" value="<?= $data["frs"]["tahun_akademik"]; ?>">
+            <input class="input-block" type="text" id="tahun" name="tahun" placeholder="Tahun Akademik" value="<?= $data["frs"]->tahun_akademik; ?>">
         </div>
 
         <div class="row">

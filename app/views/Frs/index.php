@@ -26,14 +26,14 @@
             ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row["no_frs"]; ?></td>
-                    <td><a href="<?= BASEURL ?>mahasiswa"><?= $row["nim"]; ?></a></td>
-                    <td><a href="<?= BASEURL ?>matakuliah"><?= $row["kode_matkul"]; ?></a></td>
-                    <td><?= $row["tahun_akademik"]; ?></td>
+                    <td><?= $row->no_frs; ?></td>
+                    <td><a href="<?= BASEURL ?>mahasiswa"><?= $row->nim; ?></a></td>
+                    <td><a href="<?= BASEURL ?>matakuliah"><?= $row->kode_matkul; ?></a></td>
+                    <td><?= $row->tahun_akademik; ?></td>
 
                     <td>
-                        <a href="<?= BASEURL . "frs/edit/" . $row["id"]; ?>" class="paper-btn btn-small btn-warning">Edit</a>
-                        <a href="<?= BASEURL . "frs/destroy/" . $row["id"]; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
+                        <a href="<?= BASEURL . "frs/edit/" . $row->id; ?>" class="paper-btn btn-small btn-warning">Edit</a>
+                        <a href="<?= BASEURL . "frs/destroy/" . $row->id; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>

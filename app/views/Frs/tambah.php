@@ -12,7 +12,7 @@
             <label for="nim">NIM</label>
             <select id="nim" name="nim" class="input-block">
                 <?php foreach ($data["nim"] as $nim) { ?>
-                    <option value="<?= $nim["nim"]; ?>"><?= $nim["nim"] . " - " . $nim["nama"]; ?></option>
+                    <option value="<?= $nim->nim; ?>"><?= $nim->nim . " - " . $nim->nama; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -21,7 +21,7 @@
             <label for="kode">Kode Matkul</label>
             <select id="kode" name="kode" class="input-block">
                 <?php foreach ($data["kode_matkul"] as $matkul) { ?>
-                    <option value="<?= $matkul["kode_matakuliah"]; ?>"><?= $matkul["kode_matakuliah"] . " - " . $matkul["nama_matakuliah"]; ?></option>
+                    <option value="<?= $matkul->kode_matakuliah; ?>"><?= $matkul->kode_matakuliah . " - " . $matkul->nama_matakuliah; ?></option>
                 <?php } ?>
             </select>
         </div>
