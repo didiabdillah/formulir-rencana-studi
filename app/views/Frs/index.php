@@ -1,18 +1,18 @@
 <div class="container">
-    <h3>Detail Transaksi</h3>
+    <h3>FRS</h3>
 
     <?php Flasher::flash(); ?>
 
-    <a href="<?= BASEURL ?>transaksi_detail/insert/" class="paper-btn btn-secondary btn-small"> Tambah Detail Transaksi </a>
+    <a href="<?= BASEURL ?>frs/insert/" class="paper-btn btn-secondary btn-small"> Tambah FRS </a>
 
     <table class="table-hover">
         <thead>
             <tr>
                 <th>No</th>
-                <th>No Transaksi</th>
-                <th>Kode Barang</th>
-                <th>Qty</th>
-                <th>Sub Total</th>
+                <th>No FRS</th>
+                <th>NIM</th>
+                <th>Kode Matkul</th>
+                <th>Tahun Akademik</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,17 +20,17 @@
             <?php
             $no = 1;
 
-            foreach ($data["transaksi"] as $row) {           ?>
+            foreach ($data["frs"] as $row) {           ?>
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row["no_transaksi"]; ?></td>
-                    <td><?= $row["kode_barang"]; ?></td>
-                    <td><?= $row["qty"]; ?></td>
-                    <td><?= $row["sub_total"]; ?></td>
+                    <td><?= $row["no_frs"]; ?></td>
+                    <td><?= $row["nim"]; ?></td>
+                    <td><?= $row["kode_matkul"]; ?></td>
+                    <td><?= $row["tahun_akademik"]; ?></td>
 
                     <td>
-                        <a href="<?= BASEURL . "transaksi_detail/edit/" . $row["id"]; ?>" class="paper-btn btn-small btn-warning">Edit</a>
-                        <a href="<?= BASEURL . "transaksi_detail/destroy/" . $row["id"]; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
+                        <a href="<?= BASEURL . "frs/edit/" . $row["id"]; ?>" class="paper-btn btn-small btn-warning">Edit</a>
+                        <a href="<?= BASEURL . "frs/destroy/" . $row["id"]; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>
