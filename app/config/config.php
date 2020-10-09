@@ -1,8 +1,9 @@
 <?php
 
+//Mendefinisikan URL Default
 define('BASEURL', 'http://localhost/frs-phpmvc/');
 
-//DB
+//Config Koneksi Ke Database
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');

@@ -1,19 +1,25 @@
 <div class="container">
     <h4>Edit Mahasiswa</h4>
 
+    <!-- FORM -->
     <form action="<?= BASEURL ?>mahasiswa/update" method="post">
+
+        <!-- ID -->
         <input type="hidden" name="id" id="id" value="<?= $data["mahasiswa"]->id; ?>">
 
+        <!-- NIM -->
         <div class="form-group">
             <label for="nim">NIM</label>
             <input class="input-block" type="text" id="nim" name="nim" placeholder="NIM" value="<?= $data["mahasiswa"]->nim; ?>">
         </div>
 
+        <!-- NAMA -->
         <div class="form-group">
             <label for="nama">Nama</label>
             <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama" value="<?= $data["mahasiswa"]->nama; ?>">
         </div>
 
+        <!-- GENDER -->
         <div class="form-group">
             <label for="gender">Gender</label>
             <select id="gender" name="gender" class="input-block">
@@ -22,16 +28,19 @@
             </select>
         </div>
 
+        <!-- TANGGAL LAHIR -->
         <div class="form-group">
             <label for="tgl_lahir">Tanggal Lahir</label>
             <input class="input-block" type="date" id="tgl_lahir" name="tgl_lahir" placeholder="Tanggal Lahir" value="<?= $data["mahasiswa"]->tanggal_lahir; ?>">
         </div>
 
+        <!-- TAHUN MASUK -->
         <div class="form-group">
             <label for="thn_masuk">Tahun Masuk</label>
             <input class="input-block" type="number" id="thn_masuk" name="thn_masuk" placeholder="Tahun Masuk" value="<?= $data["mahasiswa"]->tahun_masuk; ?>">
         </div>
 
+        <!-- SUBMIT / BATAL -->
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">

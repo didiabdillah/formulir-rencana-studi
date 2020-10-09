@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data["judul"]; ?></title>
 
+    <!-- PAPER CSS -->
     <link rel="stylesheet" href="<?= BASEURL ?>assets/css/paper.css">
 </head>
 
 <body>
+
+    <!-- NAVBAR -->
     <nav class="border split-nav">
         <div class="nav-brand">
             <h3><a href="<?= BASEURL ?>">Formulir Rencana Studi</a></h4>

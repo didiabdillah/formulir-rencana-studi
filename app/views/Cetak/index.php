@@ -1,8 +1,10 @@
 <div class="container">
     <h4>Cetak</h4>
 
+    <!-- FORM -->
     <form action="<?= BASEURL ?>cetak/print" method="post" target="__blank">
 
+        <!-- PILIH NIM -->
         <div class="form-group">
             <label for="nim">NIM</label>
             <select id="nim" name="nim" class="input-block">

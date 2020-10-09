@@ -1,10 +1,13 @@
 <div class="container">
     <h3>Daftar Mata Kuliah</h3>
 
+    <!-- FLASH MESSAGE -->
     <?php Flasher::flash(); ?>
 
+    <!-- TAMBAH -->
     <a href="<?= BASEURL ?>matakuliah/insert/" class="paper-btn btn-secondary btn-small"> Tambah Mata Kuliah </a>
 
+    <!-- TABEL -->
     <table class="table-hover">
         <thead>
             <tr>

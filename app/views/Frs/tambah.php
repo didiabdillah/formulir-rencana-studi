@@ -1,13 +1,16 @@
 <div class="container">
     <h4>Tambah FRS</h4>
 
+    <!-- FORM -->
     <form action="<?= BASEURL ?>frs/store" method="post">
 
+        <!-- NO FRS -->
         <div class="form-group">
             <label for="no_frs">No FRS</label>
             <input class="input-block" type="text" id="no_frs" name="no_frs" placeholder="No FRS">
         </div>
 
+        <!-- NIM -->
         <div class="form-group">
             <label for="nim">NIM</label>
             <select id="nim" name="nim" class="input-block">
@@ -17,6 +20,7 @@
             </select>
         </div>
 
+        <!-- KODE MATKUL -->
         <div class="form-group">
             <label for="kode">Kode Matkul</label>
             <select id="kode" name="kode" class="input-block">
@@ -26,11 +30,13 @@
             </select>
         </div>
 
+        <!-- TAHUN AKADEMIK -->
         <div class="form-group">
             <label for="tahun">Tahun Akademik</label>
             <input class="input-block" type="text" id="tahun" name="tahun" placeholder="Tahun Akademik">
         </div>
 
+        <!-- SUBMIT / BATAL -->
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">

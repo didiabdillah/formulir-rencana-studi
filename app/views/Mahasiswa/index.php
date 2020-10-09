@@ -1,10 +1,13 @@
 <div class="container">
     <h3>Daftar Mahasiswa</h3>
 
+    <!-- FLASH MESSAGE -->
     <?php Flasher::flash(); ?>
 
+    <!-- TAMBAH -->
     <a href="<?= BASEURL ?>mahasiswa/insert/" class="paper-btn btn-secondary btn-small"> Tambah Mahasiswa </a>
 
+    <!-- TABEL -->
     <table class="table-hover">
         <thead>
             <tr>

@@ -2,24 +2,29 @@
 
 class Matakuliah_model
 {
+    //Property
     protected $table = "matakuliah";
 
     private $db;
 
     public function __construct()
     {
+        //Inisialisasi Class Database
         $this->db = new Database;
     }
 
     public function getAllMatakuliah()
     {
+        //Query
         $this->db->query('SELECT * FROM ' . $this->table);
 
+        //Execute, Return
         return $this->db->resultSet();
     }
 
     public function tambahDataMatakuliah($data)
     {
+        //Query
         $query = "INSERT INTO matakuliah
                     VALUES
                   ('', :kode, :nama)";
@@ -30,18 +35,23 @@ class Matakuliah_model
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 
     public function getMatakuliahById($id)
     {
+        //Query
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
+
+        //Execute, Return
         return $this->db->single();
     }
 
     public function ubahDataMatakuliah($data)
     {
+        //Query
         $query = "UPDATE " . $this->table . " SET
                     kode_matakuliah = :kode,
                     nama_matakuliah = :nama
@@ -54,17 +64,20 @@ class Matakuliah_model
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 
     public function hapusDataMatakuliah($id)
     {
+        //Query
         $query = "DELETE FROM matakuliah WHERE id= :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 }

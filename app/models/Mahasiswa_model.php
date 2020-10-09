@@ -2,24 +2,29 @@
 
 class Mahasiswa_model
 {
+    //Property
     protected $table = "mahasiswa";
 
     private $db;
 
     public function __construct()
     {
+        //Inisialisasi Class Database
         $this->db = new Database;
     }
 
     public function getAllMahasiswa()
     {
+        //Query
         $this->db->query('SELECT * FROM ' . $this->table);
 
+        //Execute, Return
         return $this->db->resultSet();
     }
 
     public function tambahDataMahasiswa($data)
     {
+        //Query
         $query = "INSERT INTO mahasiswa
                     VALUES
                   ('', :nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
@@ -33,18 +38,23 @@ class Mahasiswa_model
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 
     public function getMahasiswaById($id)
     {
+        //Query
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
+
+        //Execute, Return
         return $this->db->single();
     }
 
     public function ubahDataMahasiswa($data)
     {
+        //Query
         $query = "UPDATE mahasiswa SET
                     nim = :nim,
                     nama = :nama,
@@ -63,17 +73,20 @@ class Mahasiswa_model
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 
     public function hapusDataMahasiswa($id)
     {
+        //Query
         $query = "DELETE FROM mahasiswa WHERE id= :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
         $this->db->execute();
 
+        //Execute, Return
         return $this->db->rowCount();
     }
 }

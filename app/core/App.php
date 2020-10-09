@@ -2,20 +2,20 @@
 
 class App
 {
+    //Inisialisasi Default Method, Controller, dan Param
     protected $controller = "Frs";
     protected $method = 'index';
     protected $params = [];
 
     public function __construct()
     {
+        //Mendapatkan Pecahan Request URL
         $url = $this->parseURL();
 
+        //Mengekcek Apakah URL Kosong 
         if (isset($url[0]) == NULL) {
             $url[0] = "index";
         }
-
-        // var_dump($controller);
-        // die;
 
         //controller
         if (file_exists('app/controllers/' . $url[0] . '.php')) {
@@ -45,10 +45,19 @@ class App
 
     public function parseURL()
     {
+        //Mengecek Request URL
         if (isset($_GET['url'])) {
+
+            //Menghilangkan "/" Di akhir URL
             $url = rtrim($_GET['url'], '/');
+
+            //Menetralkan Request URL
             $url = filter_var($url, FILTER_SANITIZE_URL);
+
+            //Memecah Request URL Ke dalam Array
             $url = explode('/', $url);
+
+            //Mengembalikan Nilai
             return $url;
         }
     }

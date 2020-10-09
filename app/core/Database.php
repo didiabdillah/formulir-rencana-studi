@@ -1,4 +1,6 @@
 <?php
+
+//Interface
 interface Query
 {
     public function query($query);
@@ -11,6 +13,7 @@ interface Query
 
 class Database implements Query
 {
+    //Property
     private $host = DB_HOST;
     private $user = DB_USER;
     private $pass = DB_PASS;
@@ -33,7 +36,7 @@ class Database implements Query
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION //Untuk Mode Error Menampilkan Exception
         ];
 
-
+        //Mengkoneksi Ke Database
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
         } catch (PDOException $e) {
@@ -73,23 +76,27 @@ class Database implements Query
 
     public function execute()
     {
+        // Eksekusi
         $this->stmt->execute();
     }
 
     public function resultSet()
     {
+        //Eksekusi Mengambil Semua Data
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
     public function single()
     {
+        //Eksekusi Mengambil Satu Baris
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
     }
 
     public function rowCount()
     {
+        //Eksekusi Menghitung Banyak Baris yang terpengaruh dari proses Query
         return $this->stmt->rowCount();
     }
 }

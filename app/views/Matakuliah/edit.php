@@ -1,19 +1,25 @@
 <div class="container">
     <h4>Edit Mata Kuliah</h4>
 
+    <!-- FORM -->
     <form action="<?= BASEURL ?>matakuliah/update" method="post">
+
+        <!-- ID -->
         <input type="hidden" name="id" id="id" value="<?= $data["matakuliah"]->id; ?>">
 
+        <!-- KODE MATA KULIAH -->
         <div class="form-group">
             <label for="kode">Kode Mata Kuliah</label>
             <input class="input-block" type="text" id="kode" name="kode" placeholder="Kode Mata Kuliah" value="<?= $data["matakuliah"]->kode_matakuliah; ?>">
         </div>
 
+        <!-- NAMA MATA KULIAH -->
         <div class="form-group">
             <label for="nama"> Nama Mata Kuliah</label>
             <input class="input-block" type="text" id="nama" name="nama" placeholder="Nama Mata Kuliah" value="<?= $data["matakuliah"]->nama_matakuliah; ?>">
         </div>
 
+        <!-- SUBMIT / BATAL -->
         <div class="row">
             <div class="col sm-6">
                 <div class="form-group">
