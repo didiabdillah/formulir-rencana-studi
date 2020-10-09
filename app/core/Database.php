@@ -1,6 +1,15 @@
 <?php
+interface Query
+{
+    public function query($query);
+    public function bind($param, $value, $type = NULL);
+    public function execute();
+    public function resultSet();
+    public function single();
+    public function rowCount();
+}
 
-class Database
+class Database implements Query
 {
     private $host = DB_HOST;
     private $user = DB_USER;
