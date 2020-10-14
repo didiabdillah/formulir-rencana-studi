@@ -32,8 +32,8 @@
                     <td><?= date('d/m/Y', strtotime($row->tanggal_lahir)); ?></td>
                     <td><?= $row->tahun_masuk; ?></td>
                     <td>
-                        <a href="<?= BASEURL . "mahasiswa/edit/" . $row->id; ?>" class="paper-btn btn-small btn-warning">Edit</a>
-                        <a href="<?= BASEURL . "mahasiswa/destroy/" . $row->id; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
+                        <a href="<?= BASEURL . "mahasiswa/edit/" . $row->nim; ?>" class="paper-btn btn-small btn-warning">Edit</a>
+                        <a href="<?= BASEURL . "mahasiswa/destroy/" . $row->nim; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>

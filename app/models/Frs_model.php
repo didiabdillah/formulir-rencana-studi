@@ -36,7 +36,7 @@ class Frs_model
     public function getAllFrs()
     {
         //Query
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY nim ASC');
 
         //Execute, Return
         return $this->db->resultSet();

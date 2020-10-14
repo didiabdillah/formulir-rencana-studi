@@ -16,7 +16,7 @@ class Matakuliah_model
     public function getAllMatakuliah()
     {
         //Query
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY kode_matakuliah ASC');
 
         //Execute, Return
         return $this->db->resultSet();
@@ -27,7 +27,7 @@ class Matakuliah_model
         //Query
         $query = "INSERT INTO matakuliah
                     VALUES
-                  ('', :kode, :nama)";
+                  (:kode, :nama)";
 
         $this->db->query($query);
         $this->db->bind('kode', $data['kode']);
@@ -42,8 +42,8 @@ class Matakuliah_model
     public function getMatakuliahById($id)
     {
         //Query
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id', $id);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kode_matakuliah=:kode');
+        $this->db->bind('kode', $id);
 
         //Execute, Return
         return $this->db->single();
@@ -55,7 +55,7 @@ class Matakuliah_model
         $query = "UPDATE " . $this->table . " SET
                     kode_matakuliah = :kode,
                     nama_matakuliah = :nama
-                    WHERE id = :id";
+                    WHERE kode_matakuliah = :id";
 
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
@@ -71,7 +71,7 @@ class Matakuliah_model
     public function hapusDataMatakuliah($id)
     {
         //Query
-        $query = "DELETE FROM matakuliah WHERE id= :id";
+        $query = "DELETE FROM matakuliah WHERE kode_matakuliah= :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 

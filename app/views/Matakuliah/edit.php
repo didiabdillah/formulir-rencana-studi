@@ -5,7 +5,7 @@
     <form action="<?= BASEURL ?>matakuliah/update" method="post">
 
         <!-- ID -->
-        <input type="hidden" name="id" id="id" value="<?= $data["matakuliah"]->id; ?>">
+        <input type="hidden" name="id" id="id" value="<?= $data["matakuliah"]->kode_matakuliah; ?>">
 
         <!-- KODE MATA KULIAH -->
         <div class="form-group">

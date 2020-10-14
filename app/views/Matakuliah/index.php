@@ -27,8 +27,8 @@
                     <td><?= $row->nama_matakuliah; ?></td>
 
                     <td>
-                        <a href="<?= BASEURL . "matakuliah/edit/" . $row->id; ?>" class="paper-btn btn-small btn-warning">Edit</a>
-                        <a href="<?= BASEURL . "matakuliah/destroy/" . $row->id; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
+                        <a href="<?= BASEURL . "matakuliah/edit/" . $row->kode_matakuliah; ?>" class="paper-btn btn-small btn-warning">Edit</a>
+                        <a href="<?= BASEURL . "matakuliah/destroy/" . $row->kode_matakuliah; ?>" onclick="return confirm('Yakin?');" class="paper-btn btn-small btn-danger">Hapus</a>
                     </td>
                 </tr>
             <?php } ?>

@@ -5,7 +5,7 @@
     <form action="<?= BASEURL ?>mahasiswa/update" method="post">
 
         <!-- ID -->
-        <input type="hidden" name="id" id="id" value="<?= $data["mahasiswa"]->id; ?>">
+        <input type="hidden" name="id" id="id" value="<?= $data["mahasiswa"]->nim; ?>">
 
         <!-- NIM -->
         <div class="form-group">

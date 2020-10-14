@@ -16,7 +16,7 @@ class Mahasiswa_model
     public function getAllMahasiswa()
     {
         //Query
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY nama ASC');
 
         //Execute, Return
         return $this->db->resultSet();
@@ -27,7 +27,7 @@ class Mahasiswa_model
         //Query
         $query = "INSERT INTO mahasiswa
                     VALUES
-                  ('', :nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
+                  (:nim, :nama, :gender, :tgl_lahir, :thn_masuk)";
 
         $this->db->query($query);
         $this->db->bind('nim', $data['nim']);
@@ -45,7 +45,7 @@ class Mahasiswa_model
     public function getMahasiswaById($id)
     {
         //Query
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE nim=:id');
         $this->db->bind('id', $id);
 
         //Execute, Return
@@ -61,7 +61,7 @@ class Mahasiswa_model
                     gender = :gender,
                     tanggal_lahir = :tgl_lahir, 
                     tahun_masuk = :thn_masuk 
-                    WHERE id = :id";
+                    WHERE nim = :id";
 
         $this->db->query($query);
         $this->db->bind('nim', $data['nim']);
@@ -80,7 +80,7 @@ class Mahasiswa_model
     public function hapusDataMahasiswa($id)
     {
         //Query
-        $query = "DELETE FROM mahasiswa WHERE id= :id";
+        $query = "DELETE FROM mahasiswa WHERE nim= :id";
         $this->db->query($query);
         $this->db->bind('id', $id);
 
